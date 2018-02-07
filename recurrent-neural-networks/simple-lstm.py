@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Feb  7 09:34:26 2018
+Created on Wed Feb 7 2018
 
 @author: Felipe Melo
 
 The dataset used here can be found at: goo.gl/2EF1tf
 """
+
 ### Preprocessing Training Data ###
 # Importing libraries
 import numpy as np

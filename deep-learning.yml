@@ -1,4 +1,4 @@
-name: deeplearnin
+name: deep-learning
 channels:
   - soumith
   - conda-forge
@@ -150,5 +150,5 @@ dependencies:
     - keras==2.1.3
     - tensorflow==1.4.1
     - torch==0.2.0.post4
-prefix: /home/felipe/anaconda3/envs/deeplearnin
+prefix: /home/felipe/anaconda3/envs/deep-learning
 
