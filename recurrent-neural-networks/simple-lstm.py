@@ -4,6 +4,8 @@
 Created on Wed Feb  7 09:34:26 2018
 
 @author: Felipe Melo
+
+The dataset used here can be found at: goo.gl/2EF1tf
 """
 ### Preprocessing Training Data ###
 # Importing libraries
@@ -13,7 +15,7 @@ import matplotlib.pyplot as plt
 
 # Importing the train data
 dataset_train = pd.read_csv('data/Google_Stock_Price_Train.csv')
-trainset = dataset_train.iloc[:,1:2].values 
+trainset = dataset_train.iloc[:,1:2].values
 
 # Feature Scaling
 from sklearn.preprocessing import MinMaxScaler
@@ -26,10 +28,10 @@ train_X,train_y = [],[]
 for t in range(60, 1258):
     train_X.append(trainset_scaled[t-60:t,0])
     train_y.append(trainset_scaled[t,0])
-    
+
 train_X, train_y = np.array(train_X), np.array(train_y)
 
-# Reshaping 
+# Reshaping
 train_X = np.reshape(train_X, (train_X.shape[0],train_X.shape[1],1))
 
 ### Building the LSTM ###
@@ -42,8 +44,8 @@ from keras.layers import LSTM
 from keras.layers import Dropout
 
 # Configuring the GPU
-config = tf.ConfigProto( device_count = {'GPU': 1 , 'CPU': 2} ) 
-sess = tf.Session(config=config) 
+config = tf.ConfigProto( device_count = {'GPU': 1 , 'CPU': 2} )
+sess = tf.Session(config=config)
 keras.backend.set_session(sess)
 
 # Initializing the LSTM
@@ -109,8 +111,3 @@ plt.xlabel('Time')
 plt.ylabel('Google Stock Price')
 plt.legend()
 plt.show()
-
-
-
-
-
