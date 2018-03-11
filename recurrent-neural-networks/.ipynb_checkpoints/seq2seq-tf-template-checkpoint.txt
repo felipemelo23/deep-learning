@@ -1,0 +1,55 @@
+
+"""
+Created on Thu Feb 8 2018
+
+@author: Felipe Melo
+
+Based on the following tutorial:
+youtube.com/watch?v=ElmBrKyMXxs
+"""
+
+""" GENERAL STRUCTURE OF A SEQ2SEQ MODEL IN TENSORFLOW """
+
+''' 
+Import libraries and reset tensorflow default graph
+
+Define Constants:
+-> <start> and <end> tokens
+-> vocabulary size:
+-> input embendding size:
+-> encoder and decoder hidden unit:
+
+Define Variables:
+-> encoder inputs : [encoder_max_time, batch_size]
+-> decoder inputs and targets : [decoder_max_time, batch_size]
+
+Get embedding forms from encoder and decoder inputs
+
+Define Encoder
+-> define a encoder cell then...
+-> define a rnn_dynamic with:
+    - params: encoder cell, embedded encoder inputs
+    - returns: encoder outputs and encoder final state
+(the encoder outputs can be ignored and/or delete)
+
+Define Decoder
+-> define a decoder cell then...
+-> define a rnn_dynamic with:
+    - params: decoder cell, embedded decoder inputs and encoder final state as decoder initial state
+    - returns: encoder outputs and decoder final state
+-> place a fully-connected layer without activation function on top of decoder as a projection layer
+
+Define Optimizer
+-> softmax_cross_entropy_with_logits
+    - labels : decoder targets as one hot encoded vector
+    - logits : decoder logits (the output of projection layer)
+-> loss : reduce mean of cross entropy
+-> train with Adam Optimizer minimizing the defined loss
+
+Making a prediction
+@TODO
+
+Training on a task
+@TODO
+
+'''

@@ -64,7 +64,7 @@ classifier.add(Dense(units=1, kernel_initializer='uniform', activation='sigmoid'
 classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Fitting the ANN to the Training set
-classifier.fit(X_train,y_train, batch_size=10, epochs=100)
+classifier.fit(X_train,y_train, batch_size=32, epochs=100)
 
 # Saving the model
 classifier.save('model/simple-ann.h5')
